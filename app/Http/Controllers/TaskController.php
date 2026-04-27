@@ -32,7 +32,7 @@ class TaskController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'status' => 'required|in:pending,completed',
+            'status' => 'in:pending,completed',
         ]);
 
         Task::create($request->all());
@@ -65,7 +65,7 @@ class TaskController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'status' => 'required|in:pending,completed',
+            'status' => 'in:pending,completed',
         ]);
 
         $task = Task::findOrFail($id);
